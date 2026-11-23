@@ -65,7 +65,7 @@ section:nth-child(even){background:radial-gradient(circle at 50% 100%,#14463a,#3
 /* timeline+cards */
 .tl{display:flex;gap:1.2rem;justify-content:center;font-size:.72rem;margin:.8rem 0 1rem;letter-spacing:.08em}
 .tl div{border-top:2px solid var(--g);padding-top:.4rem;max-width:150px}
-#car{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;width:100vw;padding:1rem calc(50vw - 135px);perspective:900px;scrollbar-width:none}
+#car{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;width:100vw;padding:1rem calc(50vw - 135px);perspective:900px;scrollbar-width:none}#car{cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y;overscroll-behavior-x:contain}#car.dragging{cursor:grabbing;scroll-snap-type:none}#car .ev{user-select:none;-webkit-user-select:none}#car-nav{display:flex;justify-content:center;align-items:center;gap:.8rem;margin:.4rem auto .2rem}#car-nav button{min-width:46px;padding:.55rem 1rem;font-size:1rem}#car-nav .sm{margin:0}
 #car::-webkit-scrollbar,#gal::-webkit-scrollbar{display:none}
 .ev{flex:0 0 270px;scroll-snap-align:center;border-radius:16px;padding:1.2rem 1rem;text-align:center;border:2px solid var(--g);min-height:380px;transition:transform .2s;display:flex;flex-direction:column;justify-content:center;gap:.5rem;box-shadow:0 14px 30px #0007;color:var(--iv)}
 .ev .il{font-size:3rem;letter-spacing:.2rem;animation:fl 3s infinite}.ev h3{font-size:1.25rem;line-height:1.3}.ev p{font-size:.85rem}
@@ -121,19 +121,21 @@ iframe{width:100%;height:220px;border:2px solid var(--g2);border-radius:8px;marg
  <p class="sm rv">Pull the tassel</p>
  <div id="sc" class="rv"><div class="rod"></div><div class="pap"><div><h3>ASHUTOSH ❤️ PRATIKSHA</h3><div class="n">05 DECEMBER 2026</div><div class="sm">Saturday</div></div></div><button class="tas" id="tas" aria-label="Pull tassel">🏮</button></div>
  <div id="cd" class="rv"><div><b id="dd">0</b><small>Days</small></div><div><b id="hh">0</b><small>Hours</small></div><div><b id="mm">0</b><small>Minutes</small></div><div><b id="ss">0</b><small>Seconds</small></div></div>
- <a class="btn rv" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding%20of%20Ashutosh%20%26%20Pratiksha&dates=20261204/20261206&details=Chulmati%2C%20Mandapachhadan%2C%20Haldi%20Lepan%20%26%20Chikat%2C%20Matrika%20Pujan%2C%20Sangeet%20Sandhya%20(4%20Dec).%20Baraat%204%3A00%20PM%2C%20Panigrahan%2C%20Ashirwad%20Samaroh%208%3A00%20PM%20(5%20Dec).&location=Pushp%20Vatika%2C%20Mahadevghat%2C%20Raipur%2C%20Chhattisgarh">Add to Calendar</a>
+ <a class="btn rv" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding%20of%20Ashutosh%20%26%20Pratiksha&dates=20261204/20261206&details=Chulmati%2C%20Mandapachhadan%2C%20Haldi%20Lepan%20%26%20Chikat%2C%20Matrika%20Pujan%2C%20Sangeet%20Sandhya%20(4%20Dec).%20Pool%20Party%20(Morning)%2C%20Baraat%204%3A00%20PM%2C%20Panigrahan%2C%20Reception%208%3A00%20PM%20(5%20Dec).&location=Pushp%20Vatika%2C%20Mahadevghat%2C%20Raipur%2C%20Chhattisgarh">Add to Calendar</a>
 </section>
 
 <section id="s3" class="c" style="padding-left:0;padding-right:0">
  <h2 class="big rv" style="font-size:2.2rem">Wedding Celebrations</h2>
- <div class="tl rv"><div><b class="gold">Fri, 4 Dec 2026</b><br>Haldi &amp; Sangeet functions</div><div><b class="gold">Sat, 5 Dec 2026</b><br>Baraat, Panigrahan &amp; Reception</div></div>
+ <div class="tl rv"><div><b class="gold">Fri, 4 Dec 2026</b><br>Haldi &amp; Sangeet functions</div><div><b class="gold">Sat, 5 Dec 2026</b><br>Pool Party, Baraat, Panigrahan &amp; Reception</div></div>
  <div id="car">
   <div class="ev e1"><div class="il">🌼🌻💛</div><h3>Chulmati, Mandapachhadan &amp; Haldi Lepan</h3><p>Friday, 4 December 2026</p></div>
   <div class="ev e2"><div class="il">🎶💃🪔</div><h3>Chikat, Matrika Pujan &amp; Sangeet Sandhya</h3><p>Friday, 4 December 2026</p></div>
+  <div class="ev e5"><div class="il">🏊‍♂️☀️🌴</div><h3>Pool Party</h3><p>Saturday, 5 December 2026</p><p><b>Morning</b></p></div>
   <div class="ev e3"><div class="il">🐎🥁🎺</div><h3>Baraat Prasthan</h3><p>Saturday, 5 December 2026</p><p><b>4:00 PM</b></p></div>
   <div class="ev e4"><div class="il">🔥🛕💍</div><h3>Panigrahan</h3><p>Wedding Ceremony</p><p>Saturday, 5 December 2026</p></div>
+  <div class="ev e6"><div class="il">🥂🎉💐</div><h3>Reception</h3><p>Saturday, 5 December 2026</p><p><b>8:00 PM onwards</b></p><p>Pushp Vatika, Mahadevghat, Raipur</p></div>
  </div>
- <p class="sm">← Swipe →</p>
+ <div id="car-nav"><button type="button" id="car-prev" aria-label="Previous event">←</button><p class="sm">Drag cards or use arrows</p><button type="button" id="car-next" aria-label="Next event">→</button></div>
 </section>
 
 <section id="s4"><h2 class="big rv c" style="font-size:2.2rem;margin-bottom:1.5rem">The Couple</h2>
@@ -150,8 +152,9 @@ iframe{width:100%;height:220px;border:2px solid var(--g2);border-radius:8px;marg
 
 <section id="s6" class="c"><div class="fr">
  <h2 class="big rv" style="font-size:2rem">Join us for the celebration</h2>
- <p class="pf rv gold" style="font-size:1.2rem;margin:.6rem 0">Ashirwad Samaroh Evam Pritibhoj</p>
+ <p class="pf rv gold" style="font-size:1.2rem;margin:.6rem 0">Reception</p>
  <p class="rv">Saturday, 5 December 2026<br>8:00 PM onwards</p>
+ <p class="rv" style="margin-top:.8rem"><b class="gold">Pool Party</b><br>Saturday, 5 December 2026<br><b>Morning</b></p>
  <p class="rv" style="margin-top:.6rem"><b>Pushp Vatika</b><br><span id="addr">Mahadevghat, near Visarjan Kund, Kharun River, Raipur, Chhattisgarh, India</span></p>
  <iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=Pushp+Vatika+Mahadevghat+near+Visarjan+Kund+Kharun+River+Raipur+Chhattisgarh&amp;output=embed"></iframe>
  <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Pushp+Vatika+Mahadevghat+near+Visarjan+Kund+Kharun+River+Raipur+Chhattisgarh">Get Directions</a>
@@ -214,6 +217,12 @@ tick();setInterval(tick,1000);
 // 3D carousels
 function tilt(id,cls){var c=$(id);function f(){var m=c.scrollLeft+c.clientWidth/2;c.querySelectorAll(cls).forEach(function(e){var x=e.offsetLeft+e.offsetWidth/2,o=(x-m)/c.clientWidth;e.style.transform='rotateY('+(-o*55)+'deg) scale('+(1-Math.min(Math.abs(o),.6)*.25)+')'})}c.addEventListener('scroll',function(){requestAnimationFrame(f)},{passive:true});f();addEventListener('resize',f)}
 tilt('car','.ev');
+var eventCarousel=$('car');
+function moveEventCards(direction){var card=eventCarousel.querySelector('.ev');if(!card)return;var gap=parseFloat(getComputedStyle(eventCarousel).gap)||16;eventCarousel.scrollBy({left:direction*(card.getBoundingClientRect().width+gap),behavior:'smooth'});}
+$('car-prev').addEventListener('click',function(){moveEventCards(-1)});
+$('car-next').addEventListener('click',function(){moveEventCards(1)});
+// Desktop mouse/pen dragging; native touch scrolling stays enabled.
+(function(){var down=false,startX=0,startScroll=0,pointerId=null;eventCarousel.addEventListener('pointerdown',function(e){if(e.pointerType==='touch'||e.button!==0)return;down=true;pointerId=e.pointerId;startX=e.clientX;startScroll=eventCarousel.scrollLeft;eventCarousel.classList.add('dragging');try{eventCarousel.setPointerCapture(pointerId)}catch(err){}});eventCarousel.addEventListener('pointermove',function(e){if(!down||e.pointerId!==pointerId)return;var dx=e.clientX-startX;if(Math.abs(dx)>3){eventCarousel.scrollLeft=startScroll-dx;e.preventDefault();}});function stop(e){if(!down)return;down=false;eventCarousel.classList.remove('dragging');try{eventCarousel.releasePointerCapture(pointerId)}catch(err){}pointerId=null;}eventCarousel.addEventListener('pointerup',stop);eventCarousel.addEventListener('pointercancel',stop);eventCarousel.addEventListener('lostpointercapture',stop);eventCarousel.addEventListener('wheel',function(e){if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){eventCarousel.scrollLeft+=e.deltaY;e.preventDefault();}},{passive:false});})();
 // gallery
 var g=$('gal');CAPS.forEach(function(c,i){var u=PHOTOS.gallery[i],e=document.createElement('div');e.className='gc';e.innerHTML='<div style="'+(u?'background-image:url('+u+')':'')+'">'+(u?'':'Photo '+(i+1))+'</div>'+c;e.onclick=function(){var b=$('lb').firstElementChild;b.style.backgroundImage=u?'url('+u+')':'';b.textContent=u?'':'Photo '+(i+1);$('lb').className='on'};g.appendChild(e)});
 tilt('gal','.gc');
