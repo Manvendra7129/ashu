@@ -166,17 +166,14 @@ iframe{width:100%;height:220px;border:2px solid var(--g2);border-radius:8px;marg
  <p class="rv d2" style="max-width:380px">We look forward to celebrating this beautiful occasion with you.</p>
  <h2 class="big rv d3" style="font-size:2.1rem;margin:1.4rem 0 .6rem">ASHUTOSH ❤️ PRATIKSHA</h2>
  <p class="pf rv d4" style="font-style:italic">With love,<br>The Verma Families.</p>
-  <p class="rv" style="font-size:.62rem;opacity:.65;margin-top:1.2rem">Background music: “Mandap Moments” – VARAD PURANIK MUSIC</p>
+  <p class="rv" style="font-size:.62rem;opacity:.65;margin-top:1.2rem">Background music: Wedding instrumental</p>
  <div class="shake" style="font-size:2rem;margin-top:1rem">🌹🌸🪷🌸🌹</div>
 </section>
 <button id="mus" aria-label="Music">♪</button>
 </main>
 <div id="lb"><div></div></div><div id="toast"></div>
-<!-- YouTube wedding instrumental: Mandap Moments by VARAD PURANIK MUSIC -->
-<div id="yt-wrap" aria-label="Wedding background music" style="position:fixed;width:200px;height:200px;right:8px;bottom:70px;z-index:69;opacity:.01;pointer-events:none;overflow:hidden">
-  <div id="yt-player"></div>
-</div>
-<script src="https://www.youtube.com/iframe_api"></script>
+<!-- Uploaded background music -->
+<audio id="bg-music" src="assets/audio/music-trimmed.mp3" preload="auto" loop></audio>
 
 <script>
 // PHOTOS: put files in assets/ and list here, e.g. groom:'assets/groom.jpg'
@@ -197,22 +194,15 @@ function openBook(){if(opened)return;opened=true;$('book').classList.add('open')
 $('stage').addEventListener('click',openBook);
 // reveal
 function obs(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.2});document.querySelectorAll('.rv').forEach(function(e){io.observe(e)})}
-// YouTube background music — starts only after the guest opens the invitation
-var mb=$('mus'),on=false,ytPlayer=null,ytReady=false;
-window.onYouTubeIframeAPIReady=function(){
-  ytPlayer=new YT.Player('yt-player',{width:'200',height:'200',videoId:'uWQwWusLino',
-    playerVars:(function(){var v={autoplay:0,controls:0,disablekb:1,fs:0,loop:1,playlist:'uWQwWusLino',playsinline:1,rel:0};if(location.protocol==='http:'||location.protocol==='https:'){v.origin=location.origin;}return v;})(),
-    events:{onReady:function(){ytReady=true;},onStateChange:function(e){if(e.data===YT.PlayerState.ENDED){ytPlayer.seekTo(0);ytPlayer.playVideo();}}}
-  });
-};
+// Uploaded background music — starts after the guest opens the invitation
+var mb=$('mus'),music=$('bg-music'),on=false;
+music.volume=0.6;
 function startMusic(){
-  if(!ytReady||!ytPlayer)return;
-  try{ytPlayer.setVolume(60);ytPlayer.playVideo();on=true;mb.textContent='♪';}catch(e){on=false;mb.textContent='🔇';}
+  music.play().then(function(){on=true;mb.textContent='♪';}).catch(function(){on=false;mb.textContent='🔇';});
 }
 mb.onclick=function(){
-  if(!ytReady||!ytPlayer){toast('Music is still loading. Please try again.');return;}
-  if(on){ytPlayer.pauseVideo();on=false;mb.textContent='🔇';}
-  else{ytPlayer.playVideo();on=true;mb.textContent='♪';}
+  if(on){music.pause();on=false;mb.textContent='🔇';}
+  else{startMusic();}
 };
 // scroll tassel
 function pull(){var s=$('sc');s.classList.toggle('open');if(s.classList.contains('open')){petals(18);dots(12)}}
