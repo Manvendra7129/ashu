@@ -73,7 +73,7 @@ section:nth-child(even){background:radial-gradient(circle at 50% 100%,#14463a,#3
 /* couple */
 .cp{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;width:100%;max-width:700px}
 .pc{flex:1 1 250px;max-width:320px;text-align:center}
-.ph{width:170px;height:210px;margin:0 auto 1rem;border-radius:90px 90px 8px 8px;border:3px solid var(--g);outline:2px solid var(--g2);outline-offset:5px;background:#0003 center/cover;display:grid;place-items:center;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--g)}
+.ph{width:170px;height:210px;margin:0 auto 1rem;border-radius:90px 90px 8px 8px;border:3px solid var(--g);outline:2px solid var(--g2);outline-offset:5px;background:#0003 center top/cover;display:grid;place-items:center;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--g)}
 .pc h3{font-size:1.7rem;color:var(--g)}.pc p{font-size:.85rem;line-height:1.7;margin-top:.5rem}
 /* gallery */
 #gal{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;width:100vw;padding:1rem calc(50vw - 120px);perspective:900px;scrollbar-width:none}
@@ -180,7 +180,7 @@ iframe{width:100%;height:220px;border:2px solid var(--g2);border-radius:8px;marg
 
 <script>
 // PHOTOS: put files in assets/ and list here, e.g. groom:'assets/groom.jpg'
-var PHOTOS={groom:'',bride:'',gallery:['','','','','']},CAPS=['Where it all began','Moments we cherish','Together, always','Our favourite day','Forever begins'];
+var PHOTOS={groom:'../assets/images/groom.jpg',bride:'../assets/images/bride.jpg',gallery:['../assets/images/gallery-1.jpg','../assets/images/gallery-2.jpg','../assets/images/gallery-3.jpg','../assets/images/gallery-4.jpg','../assets/images/gallery-5.jpg']},CAPS=['Where it all began','Moments we cherish','Together, always','Our favourite day','Forever begins'];
 var $=function(i){return document.getElementById(i)},fx=$('fx'),mob=innerWidth<700;
 function petals(n){for(var i=0;i<n;i++){var p=document.createElement('div');p.className='pt';p.style.left=Math.random()*100+'vw';p.style.setProperty('--dx',(Math.random()*160-80)+'px');p.style.animationDuration=(5+Math.random()*5)+'s';p.style.animationDelay=Math.random()*2+'s';p.style.transform='scale('+(.6+Math.random()*.8)+')';fx.appendChild(p);setTimeout(function(e){e.remove()}.bind(null,p),12000)}}
 function dots(n){for(var i=0;i<n;i++){var d=document.createElement('div');d.className='dot';d.style.left=Math.random()*100+'vw';d.style.top=(30+Math.random()*70)+'vh';d.style.animationDuration=(2+Math.random()*3)+'s';fx.appendChild(d);setTimeout(function(e){e.remove()}.bind(null,d),6000)}}
